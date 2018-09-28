@@ -1,1 +1,43 @@
+bool compare_lists(SinglyLinkedListNode* head1, SinglyLinkedListNode* head2) {
+    SinglyLinkedListNode *p,*q;
+    int count=0,counter=0,cncount=0;
+    p=head1;
+    q=head2;
+    while(p!=NULL)
+    {
+        count++;
+        p=p->next;
+    }
+    while(q!=NULL)
+    {
+        counter++;
+        q=q->next;
+    }
+    if(count==counter)
+    {
+        p=head1;
+        q=head2;
+        while(p!=NULL && q!=NULL)
+        {
+            if(p->data==q->data)
+            {
+                cncount++;
+                p=p->next;
+                q=q->next;
+            }
+            else{
+                break;
+            }
+        } 
+        if(count==cncount)
+            return 1;
+        else
+            return 0;
+        
+    }
+    else
+    {
+        return 0;
+    }
 
+}
