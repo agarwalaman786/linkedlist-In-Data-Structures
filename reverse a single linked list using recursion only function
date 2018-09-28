@@ -1,0 +1,9 @@
+SinglyLinkedListNode* reverse(SinglyLinkedListNode* head) {
+    struct node *q;
+    if(head==NULL || head->next==NULL)
+        return head;
+    q=reverse(head->next);
+    head->next->next=head;
+    head->next=NULL;
+    return q;
+}
